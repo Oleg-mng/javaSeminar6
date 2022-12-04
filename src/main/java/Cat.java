@@ -36,7 +36,10 @@ public class Cat {
 //        System.out.println(catMy);
 //        System.out.println();
 //        System.out.println(catMyFriend);
-        System.out.println(cats);
+        for (Cat i : cats) {
+            System.out.println();
+            System.out.println(i);
+        }
     }
 }
 
