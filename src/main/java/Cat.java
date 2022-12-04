@@ -3,13 +3,15 @@ import java.util.Objects;
 import java.util.Set;
 
 public class Cat {
+    private int id;
     private double age;
     private String nickname;
     private String breed;
     private String color;
     public static Set<Cat> cats;
 
-    public Cat(double age, String nickname, String breed, String color){
+    public Cat(int id, double age, String nickname, String breed, String color) {
+        this.id = id;
         this.age = age;
         this.nickname = nickname;
         this.breed = breed;
@@ -19,7 +21,7 @@ public class Cat {
 
     @Override
     public String toString() {
-        return " возраст кота: " + age +"\n кличка: " + nickname +"\n порода: " + breed + "\n окрас: " + color;
+        return " id:" + id + "\n возраст кота: " + age + "\n кличка: " + nickname + "\n порода: " + breed + "\n окрас: " + color;
     }
 
     @Override
@@ -36,12 +38,12 @@ public class Cat {
 
     public static void main(String[] args) {
 //        Set<Cat> cats = new HashSet();
-        Cat catMy = new Cat(0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
-        Cat catMyFriend = new Cat(4, "Inga", "unknown", "серый");
-        Cat catMyDublicate = new Cat(0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
-        cats.add (catMy);
-        cats.add (catMyFriend);
-        cats.add (catMyDublicate);
+        Cat catMy = new Cat(101, 0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
+        Cat catMyFriend = new Cat(102, 4, "Inga", "unknown", "серый");
+        Cat catMyDublicate = new Cat(101, 0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
+        cats.add(catMy);
+        cats.add(catMyFriend);
+        cats.add(catMyDublicate);
 //        catMy.age = 0.1;
 //        catMy.nickname = "Marmelad";
 //        catMy.breed = "пятнистая";
