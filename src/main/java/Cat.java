@@ -28,12 +28,12 @@ public class Cat {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Cat cat)) return false;
-        return Double.compare(cat.age, age) == 0 && nickname.equals(cat.nickname) && breed.equals(cat.breed) && color.equals(cat.color);
+        return id == cat.id && Double.compare(cat.age, age) == 0 && nickname.equals(cat.nickname) && breed.equals(cat.breed) && color.equals(cat.color);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(age, nickname, breed, color);
+        return Objects.hash(id, age, nickname, breed, color);
     }
 
     public static void main(String[] args) {
@@ -58,7 +58,6 @@ public class Cat {
         System.out.println("Проверка множества котов на равенство: ");
         System.out.println("равны ли коты: catMy = catMyDublicate? ответ: " + catMy.equals(catMyDublicate));
         System.out.println("равны ли коты: catMy = catMyFriend? ответ: " + catMy.equals(catMyFriend));
-
     }
 }
 
