@@ -37,7 +37,7 @@ public class Cat {
     public static void main(String[] args) {
 //        Set<Cat> cats = new HashSet();
         Cat catMy = new Cat(0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
-        Cat catMyFriend = new Cat(4, "Inga", "null", "серый");
+        Cat catMyFriend = new Cat(4, "Inga", "unknown", "серый");
         Cat catMyDublicate = new Cat(0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
         cats.add (catMy);
         cats.add (catMyFriend);
@@ -53,6 +53,9 @@ public class Cat {
             System.out.println();
             System.out.println(i);
         }
+        System.out.println("Проверка множества котов на равенство: ");
+        System.out.println("равны ли коты: catMy = catMyDublicate? ответ: " + catMy.equals(catMyDublicate));
+        System.out.println("равны ли коты: catMy = catMyFriend? ответ: " + catMy.equals(catMyFriend));
 
     }
 }
