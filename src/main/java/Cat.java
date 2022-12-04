@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 public class Cat {
@@ -21,6 +22,18 @@ public class Cat {
         return " возраст кота: " + age +"\n кличка: " + nickname +"\n порода: " + breed + "\n окрас: " + color;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Cat cat)) return false;
+        return Double.compare(cat.age, age) == 0 && nickname.equals(cat.nickname) && breed.equals(cat.breed) && color.equals(cat.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(age, nickname, breed, color);
+    }
+
     public static void main(String[] args) {
 //        Set<Cat> cats = new HashSet();
         Cat catMy = new Cat(0.1, "Marmelad", "пятнистая", "рыже-черно-белый");
@@ -40,6 +53,7 @@ public class Cat {
             System.out.println();
             System.out.println(i);
         }
+
     }
 }
 
